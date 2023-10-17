@@ -1,0 +1,56 @@
+name: Allure Report
+
+env:
+    SOLUTION_FILE: Allure.Examples.Xunit.sln
+    BUILD_CONFIGURATION: Debug
+
+on:
+  push:
+    branches-ignore:
+      - '!main'
+
+jobs:
+    autotests:
+        name: Run tests and generate Allure Report
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+  
+            - name: Set up .NET
+              uses: actions/setup-dotnet@v3
+              with:
+                dotnet-version: |
+                    7.0.x
+
+            - name: Restore NuGet packages
+              run: dotnet restore --packages .packages ${{ env.SOLUTION_FILE }}
+
+            - name: Build solution
+              run: dotnet build --no-restore --configuration ${{ env.BUILD_CONFIGURATION }} ${{ env.SOLUTION_FILE }}
+
+            - name: Test solution
+              run: dotnet test --no-build --configuration ${{ env.BUILD_CONFIGURATION }} ${{ env.SOLUTION_FILE }}
+              continue-on-error: true
+
+            - name: Get Allure history
+              uses: actions/checkout@v4
+              if: always()
+              continue-on-error: true
+              with:
+                ref: gh-pages
+                path: gh-pages
+
+            - name: Generate Allure Report
+              uses: simple-elf/allure-report-action@v1.7
+              if: always()
+              with:
+                allure_results: allure-results
+                allure_history: allure-history
+
+            - name: Deploy report to GitHub Pages
+              if: always()
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                publish_dir: allure-history
+                publish_branch: gh-pages
