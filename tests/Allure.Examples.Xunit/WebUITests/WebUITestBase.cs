@@ -21,7 +21,6 @@ public abstract class WebUITestFixtureBase : IAsyncLifetime
         Step("Close session");
     }
 
-    [AllureStep("Rollback changes")]
     protected virtual async Task RollbackChanges() => await Task.CompletedTask;
 
     protected async Task MaybeThrowElementNotFoundException()
