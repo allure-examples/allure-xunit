@@ -23,7 +23,7 @@ public class LabelTests : IDisposable
         this.AssertLabel("hello");
     }
 
-    [Fact(DisplayName = "Create new label via API")]
+    [Fact(DisplayName = "Delete label via API")]
     [AllureTag("regress")]
     public void DeleteLabelTest()
     {
