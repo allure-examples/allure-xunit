@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Oct 18 11:42:48 GMT 2023","Wed Oct 18 11:42:48 GMT 2023","2","","","","Allure.Examples.NUnit3.RestAPITests.LabelTests","Delete label via API","Delete label via API",""
+"passed","Wed Oct 18 11:42:48 GMT 2023","Wed Oct 18 11:42:48 GMT 2023","7","","","","Allure.Examples.NUnit3.WebUITests.MilestoneTests","Close existing milestone by authorized user","Close existing milestone by authorized user",""
+"passed","Wed Oct 18 11:42:48 GMT 2023","Wed Oct 18 11:42:48 GMT 2023","5","","","","Allure.Examples.NUnit3.WebUITests.LabelTests","Delete existing label by authorized user","Delete existing label by authorized user",""
+"passed","Wed Oct 18 11:42:48 GMT 2023","Wed Oct 18 11:42:48 GMT 2023","40","","","","Allure.Examples.NUnit3.RestAPITests.LabelTests","Create new label via API","Create new label via API",""
+"passed","Wed Oct 18 11:42:48 GMT 2023","Wed Oct 18 11:42:48 GMT 2023","2","","","","Allure.Examples.NUnit3.WebUITests.MilestoneTests","Create new milestone by authorized user","Create new milestone by authorized user",""
+"passed","Wed Oct 18 11:42:48 GMT 2023","Wed Oct 18 11:42:48 GMT 2023","7","","","","Allure.Examples.NUnit3.WebUITests.LabelTests","Add label to existing issue by authorized user","Add label to existing issue by authorized user",""
+"passed","Wed Oct 18 11:42:48 GMT 2023","Wed Oct 18 11:42:48 GMT 2023","101","","","","Allure.Examples.NUnit3.WebUITests.LabelTests","Create new label by authorized user","Create new label by authorized user",""
